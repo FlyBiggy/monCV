@@ -73,7 +73,8 @@ footer>p>a:hover{
     line-height: 20px;
     color: white;
     border-radius: 10px;
-    transition: width 0.3s; /* Transition de la largeur de la barre de progression */
+    transition: width 0.3s;
+    margin-right: 50%;
 }
 
 
@@ -108,14 +109,16 @@ footer>p>a:hover{
 }
 
 button {
-    background-color: #0077b5;
+    background-color: #5b9aa0;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 20px;
 }
 
 button:hover {
     background-color: #005d8b;
 }
+
 
