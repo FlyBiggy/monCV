@@ -1,127 +1,177 @@
-body {
-    font-family: "Trebuchet MS";
+/* Reset des marges et paddings pour assurer une base propre */
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #9ac8e3;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
 header {
-    border-style: double ;
-    border-radius: 100px;
-    background-color: #5b9aa0;
+    background-color: #3498db;
     color: white;
     text-align: center;
     padding: 20px;
 }
 
-section {
-    margin: 20px;
+h1 {
+    font-size: 2em;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.menu-icon {
+    display: none;
+    cursor: pointer;
 }
 
-li {
-    margin-bottom: 10px;
-}
-
-footer {
-    background-color: #5b9aa0;
-    color: white;
-    text-align: center;
-    padding: 5px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-style: double;
-    border-radius: 100px;
-    box-sizing: border-box;
-}
-
-footer>p>a {
-    color : white;
-    text-decoration: none;
-    border-style: dot-dot-dash;
-    border-radius: 50px;
-    padding: 1% 10%;
-    background-color: #9ac8e3;
-}
-
-footer>p>a:hover{
-    background-color: black;
-}
-
-/* Styles pour les barres de progression */
-/* Styles pour les barres de progression */
-.progress {
-    height: 20px;
-    background-color: #e0e0e0;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    overflow: hidden; /* Pour masquer la partie dépassant de la barre */
-}
-
-.progress-bar {
-    width: 100%; /* Largeur par défaut à 100% */
-    height: 100%;
-    background-color: #5b9aa0; /* Couleur de remplissage de la barre de progression */
-    text-align: center;
-    line-height: 20px;
-    color: white;
-    border-radius: 10px;
-    transition: width 0.3s;
-    margin-right: 50%;
-}
-
-
-
-/* Au survol, la barre de progression continue l'animation */
-.progress-bar:hover {
-    animation: none; /* Désactive l'animation par défaut */
-    width: 100%; /* Largeur à 100% au survol */
-}
-
-/* Styles pour les panneaux éducatifs */
-.education-panels {
-    display: flex;
+nav {
+    background-color: #2980b9;
     overflow: hidden;
 }
 
-.education-panel {
-    flex: 0 0 100%;
-    display: none;
-    padding: 20px;
-    background-color: #f7f7f7;
+nav ul {
+    list-style: none;
+    display: flex;
 }
 
-.education-panel.current {
-    display: block;
+nav li {
+    margin-right: 20px;
 }
 
-/* Styles pour les boutons de navigation */
-.navigation {
-    text-align: center;
-    margin-top: 20px;
-}
-
-button {
-    background-color: #5b9aa0;
+nav a {
+    text-decoration: none;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
-button:hover {
-    background-color: #005d8b;
+/* Styles pour le menu hamburger */
+@media only screen and (max-width: 600px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px; /* Ajuste la valeur en fonction de la hauteur de ton header */
+        right: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #2980b9;
+    }
+
+    nav ul.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav li {
+        display: block;
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    /* Style amélioré pour le bouton mobile */
+    .mobile-nav-button {
+        display: block; /* Afficher le bouton uniquement sur les écrans plus petits */
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #3498db;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
 }
 
-#education {
+/* Styles pour les écrans plus larges (ordinateurs, tablettes, etc.) */
+@media only screen and (min-width: 601px) {
+    nav ul {
+        display: flex;
+        justify-content: flex-end; /* Ajuste cette propriété pour positionner correctement la liste */
+    }
+
+    nav li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    /* Masquer le bouton "Autres Pages" sur les écrans plus larges */
+    .mobile-nav-button {
+        display: none;
+    }
+}
+
+
+
+/* Styles pour les écrans plus larges (ordinateurs, tablettes, etc.) */
+@media only screen and (min-width: 601px) {
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+}
+
+/* Styles pour le reste du contenu */
+/* Ajoute ici le style CSS pour le contenu principal de ta page */
+
+
+
+footer {
+    background-color: #3498db;
+    color: white;
     text-align: center;
-    margin: 2% 25%;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
+
+.formation.active {
+    display: block;
+    text-align: center;
+}
+
+.formation {
+    display: none;
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.arrow-left, .arrow-right {
+    text-align: center;
+}
+
+/* Ajoute d'autres styles spécifiques selon tes besoins */
+

@@ -1,73 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV de Julien DESRUMAUX</title>
     <link rel="stylesheet" href="css/styles.css">
+    <title>CV de Julien DESRUMAUX</title>
 </head>
+
 <body>
+    <header>
+        <img src="img/logouniv.png" alt="Image de formation" id="header-image" width="100px">
+        <h1>CV de Julien DESRUMAUX</h1>
+        <div class="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    
 
-<header>
-    <h1>Julien DESRUMAUX</h1>
-    <p>Étudiant BUT informatique</p>
-</header>
+    <nav id="main-nav">
+        <ul>
+            <li><a href="pages/formations.html">Formations</a></li>
+            <li><a href="pages/competences.html">Compétences</a></li>
+            <li><a href="pages/experiences.html">Expériences</a></li>
+            <li><a href="pages/realisations.html">Réalisations</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<section id="about">
-    <h2>À propos de moi</h2>
-    <p>
-        Bonjour,
-        Je m'appelle Julien DESRUMAUX, j'ai 22 ans et je suis actuellement étudiant en deuxième année de BUT informatique.
-        Appréciant le développement d'applications, je suis à la recherche d'un stage qui me permettra d'approfondir mes compétences et d'appliquer mes connaissances acquises au cours de mon parcours éducatif.
-    </p>
-</section>
+    <section id="presentation">
+        <p>Salut ! Moi, c'est Julien DESRUMAUX, étudiant en informatique en Bachelor Universitaire de Technologie (BUT). Passionné par le monde numérique, j'explore différentes facettes de l'informatique à travers mes projets et mes études.</p>
+        <p>Ce CV numérique est comme une plongée dans mon univers informatique. Découvrez mes formations, compétences, expériences, et bien sûr, mes projets les plus fous ! Je suis ravi de partager un peu de ma passion avec vous.</p>
+        <p>N'hésitez pas à explorer les différentes sections. Bonne visite ! 🚀</p>
+    </section>
+        
 
-<section id="projet">
-    <h2>Projet </h2>
-    <p><a href="pages/projet.html">Voir mes projets détaillés</a></p>
-</section>
+    <section id="projet-scolaire">
+        <h2>Projets Informatiques (BUT)</h2>
+        <!-- Insère ici les informations sur les projets scolaires -->
+    </section>
 
-<section id="experience">
-    <h2>Expérience professionnelle</h2>
-    <p><a href="pages/experience.html">Voir l'expérience professionnelle détaillée</a></p>
-</section>
+    <section id="autres-realisations">
+        <h2>Autres Réalisations</h2>
+        <!-- Insère ici les informations sur les réalisations hors cadre scolaire -->
+    </section>
 
-<section id="education">
-    <h2>Éducation</h2>
-    <p><a href="pages/education.html">Voir l'éducation détaillée</a></p>
-</section>
+    <footer>
+        <p>&copy; 2023 Julien DESRUMAUX</p>
+    </footer>
 
-<section id="skills">
-    <h2>Compétences</h2>
-    <ul>
-        <li>
-            <p>Compétence 1</p>
-            <div class="progress">
-                <div class="progress-bar skill1" style="width: 80%">80%</div>
-            </div>
-        </li>
-        <li>
-            <p>Compétence 2</p>
-            <div class="progress">
-                <div class="progress-bar skill2" style="width: 70%">70%</div>
-            </div>
-        </li>
-        <li>
-            <p>Compétence 3</p>
-            <div class="progress">
-                <div class="progress-bar skill3" style="width: 50%">50%</div>
-            </div>
-        </li>
-    </ul>
-</section>
+    <!-- Bouton pour accéder aux autres pages sur mobile -->
+    <button class="mobile-nav-button" onclick="toggleMenu()">Liste</button>
 
-
-
-<footer>
-    <p>Contact : desrumaux.j@gmail.com | Téléphone : 06 56 78 51 29</p>
-</footer>
-
-<script src="script/script.js"></script>
-
+    <script src="script/main.js"></script>
 </body>
+
 </html>
+

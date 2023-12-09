@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>CV de Julien DESRUMAUX - Formations</title>
+</head>
+
+<body>
+    <header>
+        <img src="../img/logouniv.png" alt="Image de formation" id="header-image" width="20%">
+        <h1>CV de Julien DESRUMAUX</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <nav id="main-nav">
+        <ul>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="experiences.html">Expériences</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="formations">
+      <h2>Formations</h2>
+  
+      <!-- Flèche de gauche pour naviguer entre les formations -->
+      <a href="#" class="arrow-left" onclick="prevFormation()">&#8592;</a>
+      <a href="#" class="arrow-right" onclick="nextFormation()">&#8594;</a>
+  
+      <div class="formation active">
+          <img src="../img/logouniv.png" alt="Logo de l'école" width="300px">
+          <div class="info-formation">
+              <p><strong>Date :</strong> 2019 - Présent</p>
+              <p><strong>Formation :</strong> Bachelor Universitaire de Technologie (BUT) en Informatique</p>
+              <!-- Ajoutez d'autres informations si nécessaire -->
+          </div>
+      </div>
+  
+      <div class="formation">
+          <img src="../img/colbert.jpg" alt="Logo de l'école" width="300px">
+          <div class="info-formation">
+              <p><strong>Date :</strong> 2015 - 2019</p>
+              <p><strong>Formation :</strong> Baccalauréat sciences et technologies de l'industrie et du développement durable</p>
+              <!-- Ajoutez d'autres informations si nécessaire -->
+          </div>
+      </div>
+  
+      <div class="formation">
+          <img src="../img/verne.jpg" alt="Logo de l'école" width="300px">
+          <div class="info-formation">
+              <p><strong>Date :</strong> 2010 - 2015</p>
+              <p><strong>Formation :</strong> Brevet des collèges</p>
+              <!-- Ajoutez d'autres informations si nécessaire -->
+          </div>
+      </div>
+  
+  
+      <!-- Ajoutez d'autres formations si nécessaire -->
+  </section>
+
+  <button class="mobile-nav-button" onclick="toggleMenu()">Liste</button>
+
+
+    <script src="../script/main.js"></script>
+</body>
+
+</html>
