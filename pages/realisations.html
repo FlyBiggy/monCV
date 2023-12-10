@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>CV de Julien DESRUMAUX - Réalisations</title>
+</head>
+
+<body>
+    <header>
+        <img src="../img/logouniv.png" alt="Image de formation" id="header-image" width="20%">
+        <h1>CV de Julien DESRUMAUX</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <nav id="main-nav">
+        <ul>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="experiences.html">Expériences</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="formation">
+        <h2>Réalisations</h2>
+
+        <a href="#" class="arrow-left" onclick="prevFormation()">&#8592;</a>
+      <a href="#" class="arrow-right" onclick="nextFormation()">&#8594;</a>
+        <div class="formation active">
+            <h3>WhatIsThatMelody</h3>
+            <img src="../img/jeu.png" alt="WhatIsThatMelody" width="450px">
+            <p><strong>Description :</strong> Dans ce projet, il nous était demandé de créer un jeu ludopédagogique. Avec mon coéquipier Paul Degraëve, nous avons décidé de réaliser une version simplifiée de "N'oubliez pas les paroles" en utilisant des comptines pour enfants, que nous avons nommée "What is that melody". Lors de ce projet, nous avons utilisé une version de Java appelée iJava, ainsi que du Bash. Grâce à cette expérience, j'ai pu faire mes premiers pas sur GitHub pour collaborer avec mon coéquipier.</p>
+        </div>
+
+        <div class="formation">
+            <h3>How Not To Die In A Dungeon</h3>
+            <img src="../img/hownottodie.png" alt="how no to die in a dungeon" width="450px">
+            <p><strong>Description :</strong> Dans ce projet nous étions une équipe de 5 et le but était de codé un jeu en Java. L'objectif de ce travail était de nous apprendre les base de la méthode SCRUM</p>
+        </div>
+
+    </section>
+
+    <button class="mobile-nav-button" onclick="toggleMenu()">Liste</button>
+
+    <script src="../script/main.js"></script>
+</body>
+
+</html>
