@@ -188,3 +188,7 @@ footer {
 .social-icons li {
     margin-right: 10px; /* Ajuste l'espacement entre les icônes */
 }
+
+p {
+    margin: 20px; /* Ajuste l'espacement entre les paragraphes */
+}
