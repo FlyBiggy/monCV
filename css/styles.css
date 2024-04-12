@@ -190,5 +190,6 @@ footer {
 }
 
 p {
-    margin: 20px; /* Ajuste l'espacement entre les paragraphes */
+    margin: 20px;
+    text-align: justify;
 }
