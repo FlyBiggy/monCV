@@ -1,4 +1,3 @@
-/* Reset des marges et paddings pour assurer une base propre */
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
@@ -49,12 +48,11 @@ nav a {
     font-size: 1.2em;
 }
 
-/* Styles pour le menu hamburger */
 @media only screen and (max-width: 600px) {
     nav ul {
         display: none;
         position: absolute;
-        top: 60px; /* Ajuste la valeur en fonction de la hauteur de ton header */
+        top: 60px;
         right: 0;
         width: 100%;
         text-align: center;
@@ -80,9 +78,8 @@ nav a {
         z-index: 1000;
     }
 
-    /* Style amélioré pour le bouton mobile */
     .mobile-nav-button {
-        display: block; /* Afficher le bouton uniquement sur les écrans plus petits */
+        display: block;
         position: fixed;
         top: 20px;
         right: 20px;
@@ -101,11 +98,11 @@ nav a {
     }
 }
 
-/* Styles pour les écrans plus larges (ordinateurs, tablettes, etc.) */
+
 @media only screen and (min-width: 601px) {
     nav ul {
         display: flex;
-        justify-content: flex-end; /* Ajuste cette propriété pour positionner correctement la liste */
+        justify-content: flex-end;
     }
 
     nav li {
@@ -117,7 +114,6 @@ nav a {
         display: none;
     }
 
-    /* Masquer le bouton "Autres Pages" sur les écrans plus larges */
     .mobile-nav-button {
         display: none;
     }
@@ -125,7 +121,6 @@ nav a {
 
 
 
-/* Styles pour les écrans plus larges (ordinateurs, tablettes, etc.) */
 @media only screen and (min-width: 601px) {
     nav ul {
         display: flex;
@@ -142,8 +137,6 @@ nav a {
     }
 }
 
-/* Styles pour le reste du contenu */
-/* Ajoute ici le style CSS pour le contenu principal de ta page */
 
 
 
@@ -186,10 +179,9 @@ footer {
 }
 
 .social-icons li {
-    margin-right: 10px; /* Ajuste l'espacement entre les icônes */
+    margin-right: 10px;
 }
 
 p {
     margin: 20px;
-    text-align: justify;
 }
