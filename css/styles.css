@@ -1,44 +1,55 @@
+/* Réinitialisation des marges et paddings */
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
+/* Corps principal */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #fff3e0; /* Fond clair */
+    color: #5d4037; /* Texte chaud */
     line-height: 1.6;
 }
 
+/* Header */
 header {
-    background-color: #3498db;
+    background-color: #ff7043; /* Orange chaud */
     color: white;
     text-align: center;
-    padding: 20px;
-    padding-bottom: 0%;
+    padding: 20px 0;
 }
 
 h1 {
     font-size: 2em;
 }
 
-.menu-icon {
-    display: none;
-    cursor: pointer;
-}
-
+/* Navigation */
 nav {
-    background-color: #2980b9;
+    background-color: #ff5722; /* Orange vif */
     overflow: hidden;
 }
 
 nav ul {
     list-style: none;
-    display: flex;
+    display: none; /* Masqué par défaut sur mobile */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #ff5722; /* Couleur de fond du menu */
+    flex-direction: column;
+    z-index: 1000;
+}
+
+nav ul.show {
+    display: flex; /* Afficher le menu lorsqu'il a la classe "show" */
 }
 
 nav li {
-    margin-right: 20px;
+    margin: 0;
+    padding: 10px 0;
 }
 
 nav a {
@@ -48,100 +59,38 @@ nav a {
     font-size: 1.2em;
 }
 
-@media only screen and (max-width: 600px) {
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        text-align: center;
-        background-color: #2980b9;
-    }
-
-    nav ul.show {
-        display: flex;
-        flex-direction: column;
-    }
-
-    nav li {
-        display: block;
-        margin: 0;
-        padding: 10px 0;
-    }
-
-    .menu-icon {
-        display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-    }
-
-    .mobile-nav-button {
-        display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background-color: #3498db;
-        color: white;
-        padding: 15px 20px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        z-index: 1000;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    footer {
-        display: none;
-    }
-}
-
-
+/* Toujours afficher le menu sur les écrans plus larges */
 @media only screen and (min-width: 601px) {
     nav ul {
-        display: flex;
+        display: flex; /* Afficher le menu par défaut */
+        position: static;
+        flex-direction: row;
         justify-content: flex-end;
+        background-color: transparent;
     }
 
     nav li {
-        display: inline;
         margin-right: 20px;
-    }
-
-    .menu-icon {
-        display: none;
-    }
-
-    .mobile-nav-button {
-        display: none;
     }
 }
 
-
-
-@media only screen and (min-width: 601px) {
-    nav ul {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    nav li {
-        display: inline;
-        margin-right: 20px;
-    }
-
-    .menu-icon {
-        display: none;
-    }
+/* Mode sombre */
+body.dark-mode {
+    background-color: #2b1d17; /* Fond sombre */
+    color: #f5cbaa; /* Texte clair */
 }
 
+header.dark-mode, nav.dark-mode, footer.dark-mode {
+    background-color: #4a2c20; /* Orange foncé */
+}
 
+nav.dark-mode a {
+    color: #f5cbaa; /* Liens clairs */
+}
 
-
+/* Footer */
 footer {
-    background-color: #3498db;
+    background-color: #ff7043; /* Orange chaud */
     color: white;
     text-align: center;
     padding: 10px;
@@ -150,6 +99,7 @@ footer {
     width: 100%;
 }
 
+/* Formations */
 .formation.active {
     display: block;
     text-align: center;
@@ -160,6 +110,7 @@ footer {
     text-align: center;
 }
 
+/* Centrage */
 .center {
     display: flex;
     flex-direction: row;
@@ -167,10 +118,12 @@ footer {
     text-align: center;
 }
 
+/* Flèches */
 .arrow-left, .arrow-right {
     text-align: center;
 }
 
+/* Icônes sociales */
 .social-icons {
     list-style: none;
     padding: 0;
@@ -182,6 +135,106 @@ footer {
     margin-right: 10px;
 }
 
+/* Paragraphes */
 p {
     margin: 20px;
+}
+
+/* Toggle switch */
+.dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Par défaut */
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* Lorsque le toggle est activé */
+input:checked + .slider {
+    background-color: #d35400; /* Orange sombre */
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+/* Mobile navigation */
+@media only screen and (max-width: 600px) {
+    nav ul {
+        display: none; /* Masquer le menu par défaut */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #ff5722;
+        flex-direction: column;
+    }
+
+    nav ul.show {
+        display: flex; /* Afficher le menu lorsqu'il a la classe "show" */
+    }
+
+    .menu-icon {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .mobile-nav-button {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #ff7043;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+        display: none;
+    }
 }

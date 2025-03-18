@@ -1,24 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var menuIcon = document.querySelector('.menu-icon');
-    var navUl = document.querySelector('nav ul');
-    var mobileNavButton = document.querySelector('.mobile-nav-button');
+    const headerContainer = document.getElementById('header-container');
+    if (headerContainer) {
+        fetch('../pages/header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erreur HTTP : ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                headerContainer.innerHTML = data;
 
-    function toggleMenu() {
-        navUl.classList.toggle('show');
+                const menuIcon = document.querySelector('.menu-icon');
+                const navUl = document.querySelector('nav ul');
+                const mobileNavButton = document.querySelector('.mobile-nav-button');
+
+                // Fonction pour basculer l'affichage du menu
+                function toggleMenu() {
+                    navUl.classList.toggle('show');
+                }
+
+                // Ajouter un événement au bouton "Liste"
+                if (menuIcon) menuIcon.addEventListener('click', toggleMenu);
+                if (mobileNavButton) mobileNavButton.addEventListener('click', toggleMenu);
+            })
+            .catch(error => console.error('Erreur lors du chargement du header:', error));
     }
-
-    menuIcon.addEventListener('click', toggleMenu);
-    mobileNavButton.addEventListener('click', toggleMenu);
 });
-
-
 
 let currentIndex = 0;
 
-
 function prevFormation() {
     currentIndex--;
-
 
     if (currentIndex < 0) {
         currentIndex = document.querySelectorAll('.formation').length - 1;
@@ -26,8 +39,6 @@ function prevFormation() {
 
     updateDisplay();
 }
-
-
 
 function nextFormation() {
     currentIndex++;
@@ -39,7 +50,6 @@ function nextFormation() {
     updateDisplay();
 }
 
-
 function updateDisplay() {
     const formations = document.querySelectorAll('.formation');
 
@@ -49,4 +59,3 @@ function updateDisplay() {
 
     formations[currentIndex].style.display = 'block';
 }
-
