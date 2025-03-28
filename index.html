@@ -9,7 +9,32 @@
 </head>
 
 <body>
-    <div id="header-container"></div>
+    <header>
+        <img src="../img/logouniv.png" alt="Image de formation" id="header-image" width="20%">
+        <h1>CV de Julien DESRUMAUX</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../pages/formations.html">Formations</a></li>
+                <li><a href="../pages/competences.html">Compétences</a></li>
+                <li><a href="../pages/experiences.html">Expériences</a></li>
+                <li><a href="../pages/realisations.html">Réalisations</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+                <li><a href="../doc/CV.pdf" download="CV-DESRUMAUX-Julien.pdf">Télécharger</a></li>
+            </ul>
+        </nav>
+        <div class="dark-mode-toggle">
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
 
     <section id="presentation">
         <p>Bonjour ! Je suis Julien DESRUMAUX, étudiant en BUT Informatique. Mon parcours se reflète à travers des projets stimulants qui ont façonné ma compréhension du domaine.</p>

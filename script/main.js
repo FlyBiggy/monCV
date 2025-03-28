@@ -1,32 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const headerContainer = document.getElementById('header-container');
-    if (headerContainer) {
-        fetch('../pages/header.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Erreur HTTP : ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                headerContainer.innerHTML = data;
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
 
-                const menuIcon = document.querySelector('.menu-icon');
-                const navUl = document.querySelector('nav ul');
-                const mobileNavButton = document.querySelector('.mobile-nav-button');
+    // Fonction pour basculer le mode sombre
+    function toggleDarkMode() {
+        const isDarkMode = body.classList.toggle('dark-mode');
+        document.querySelector('header').classList.toggle('dark-mode');
+        document.querySelector('nav').classList.toggle('dark-mode');
+        document.querySelector('footer')?.classList.toggle('dark-mode');
 
-                // Fonction pour basculer l'affichage du menu
-                function toggleMenu() {
-                    navUl.classList.toggle('show');
-                }
+        // Enregistrer l'état dans localStorage
+        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+    }
 
-                // Ajouter un événement au bouton "Liste"
-                if (menuIcon) menuIcon.addEventListener('click', toggleMenu);
-                if (mobileNavButton) mobileNavButton.addEventListener('click', toggleMenu);
-            })
-            .catch(error => console.error('Erreur lors du chargement du header:', error));
+    // Restaurer l'état du mode sombre depuis localStorage
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+        document.querySelector('header').classList.add('dark-mode');
+        document.querySelector('nav').classList.add('dark-mode');
+        document.querySelector('footer')?.classList.add('dark-mode');
+        darkModeToggle.checked = true; // Synchroniser l'état du toggle
+    }
+
+    // Ajouter un événement pour le toggle switch
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('change', toggleDarkMode);
+    }
+
+    // Gestion du menu mobile
+    const menuButton = document.querySelector('.mobile-nav-button');
+    const navMenu = document.querySelector('nav ul');
+
+    function toggleMenu() {
+        navMenu.classList.toggle('show');
+    }
+
+    if (menuButton) {
+        menuButton.addEventListener('click', toggleMenu);
     }
 });
+
 
 let currentIndex = 0;
 
